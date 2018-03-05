@@ -17,4 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('homepage');
+Route::get('/hero', 'HeroController@index');
+Route::get('/show', 'HeroController@show');
+Route::get('hero/{name}', 'HeroController@show');
+
+
+Route::post('/poll/store', 'HeroController@store');
